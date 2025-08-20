@@ -1,0 +1,21 @@
+def find_zero_sum_subarrays(arr):
+    hashmap = {}
+    result = []
+    sum = 0
+
+    for i in range(len(arr)):
+        sum += arr[i]
+
+        if sum == 0:
+            result.append((0, i))
+
+        if sum in hashmap:
+            for start_index in hashmap[sum]:
+                result.append((start_index + 1, i))
+
+        hashmap.setdefault(sum, []).append(i)
+
+    return result
+
+arr = [1, 2, -3, 3, -1, 2]
+print(find_zero_sum_subarrays(arr))
