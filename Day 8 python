@@ -1,0 +1,13 @@
+def reverse_words(s: str) -> str:
+    # Split string by whitespace and remove empty strings
+    words = s.strip().split()
+    
+    # Reverse the list of words
+    reversed_words = words[::-1]
+    
+    # Join them back with a single space
+    return ' '.join(reversed_words)
+
+input_str = "   the   sky  is   blue   "
+output_str = reverse_words(input_str)
+print(output_str)  # Output: "blue is sky the"
