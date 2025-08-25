@@ -1,0 +1,23 @@
+def permute_unique(s):
+    def backtrack(path, counter):
+        if len(path) == len(s):
+            result.append("".join(path))
+            return
+        for char in counter:
+            if counter[char] > 0:
+              
+                path.append(char)
+                counter[char] -= 1
+
+                backtrack(path, counter)
+
+                path.pop()
+                counter[char] += 1
+
+    result = []
+    counter = {}
+    for char in s:
+        counter[char] = counter.get(char, 0) + 1
+
+    backtrack([], counter)
+    return result
