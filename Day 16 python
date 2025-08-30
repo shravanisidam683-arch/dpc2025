@@ -1,0 +1,11 @@
+import math
+
+def find_lcm(n, m):
+    return abs(n * m) // math.gcd(n, m)
+
+n = 4
+m = 6
+print("LCM:", find_lcm(n, m))  # Output: 12
+print(find_lcm(10, 15))  # Output: 30
+print(find_lcm(7, 5))    # Output: 35
+print(find_lcm(21, 6))   # Output: 42
