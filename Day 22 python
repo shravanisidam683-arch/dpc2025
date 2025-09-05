@@ -1,0 +1,15 @@
+from collections import defaultdict
+
+def first_element_to_repeat_k_times(arr, k):
+    freq = defaultdict(int)
+
+    # First pass: Count frequencies
+    for num in arr:
+        freq[num] += 1
+
+    # Second pass: Find first number with frequency == k
+    for num in arr:
+        if freq[num] == k:
+            return num
+
+    return -1
